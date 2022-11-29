@@ -1,6 +1,6 @@
 using System;
 
-namespace NIvel2{
+namespace Nivel2{
     public class Exercicio23{
         static void Main(string[] args){
             Console.WriteLine("Selecione a operação que deseja realizar:");
@@ -15,34 +15,22 @@ namespace NIvel2{
             decimal number1, number2;
             switch(opcao){
                 case 1: 
-                    Console.WriteLine("Entre o dígito");
-                    decimal.TryParse(Console.ReadLine(),out number1);
-                    Console.WriteLine("Entre outro dígito");
-                    decimal.TryParse(Console.ReadLine(),out number2);
+                    (number1, number2) = DoisDigitos();
                     Console.WriteLine($"A soma é {number1 + number2}");
                     break;
 
                 case 2:
-                    Console.WriteLine("Entre o dígito");
-                    decimal.TryParse(Console.ReadLine(),out number1);
-                    Console.WriteLine("Entre outro dígito");
-                    decimal.TryParse(Console.ReadLine(),out number2);
+                    (number1, number2) = DoisDigitos();
                     Console.WriteLine($"A subtração é {number1 - number2}");
                     break;
 
                 case 3:
-                    Console.WriteLine("Entre o dígito");
-                    decimal.TryParse(Console.ReadLine(),out number1);
-                    Console.WriteLine("Entre outro dígito");
-                    decimal.TryParse(Console.ReadLine(),out number2);
+                    (number1, number2) = DoisDigitos();
                     Console.WriteLine($"A multiplicação é {number1*number2}");
                     break;
 
                 case 4:
-                    Console.WriteLine("Entre o dígito");
-                    decimal.TryParse(Console.ReadLine(),out number1);
-                    Console.WriteLine("Entre outro dígito");
-                    decimal.TryParse(Console.ReadLine(),out number2);
+                    (number1, number2) = DoisDigitos();
                     Console.WriteLine($"A divisão é {number1/number2}");
                     break;
 
@@ -50,6 +38,16 @@ namespace NIvel2{
                     Console.WriteLine("Saindo do programa");
                     break;
             };
+
+            (decimal,decimal) DoisDigitos(){
+                Console.WriteLine("Entre o dígito");
+                decimal.TryParse(Console.ReadLine(),out decimal n1);
+                Console.WriteLine("Entre outro dígito");
+                decimal.TryParse(Console.ReadLine(),out decimal n2);
+                return (n1,n2);
+            }
         }
+
+
     }
 }
